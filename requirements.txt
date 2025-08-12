@@ -1,0 +1,8 @@
+dash
+pandas
+pymysql
+python-dotenv
+openpyxl
+plotly
+dash-bootstrap-components
+mariadb
