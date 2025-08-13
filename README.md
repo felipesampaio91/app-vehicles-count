@@ -29,7 +29,7 @@ DB_NAME = "nome_banco"
 DB_PORT = 3306
 
 DashDASH_HOST=127.0.0.1
-DASH_PORT=8050
+DASH_PORT=8055
 
 Exemplo:
 # Configuração do Banco de Dados
@@ -41,7 +41,7 @@ DB_NAME=maestro_base
 
 # Configuração do App 
 DashDASH_HOST=127.0.0.1
-DASH_PORT=8050
+DASH_PORT=8055
 DEBUG=True
 
 
@@ -53,10 +53,27 @@ OBS: O arquivo excel exportado pela aplicação ficará disponível na pasta do 
 
 
 
-🚀 Como Rodar imagem Docker
+🚀 Como Rodar a imagem Docker
+Para executar a aplicação através do container utilize 
+- DB_HOST=host.docker.internal no arquivo .env
+
+Exemplo de config:
+
+# Configuração do Banco de Dados
+DB_HOST=host.docker.internal
+DB_PORT=3306
+DB_USER=root
+DB_PASS=kjk540
+DB_NAME=maestro_base
+
+# Configuração do App 
+DashDASH_HOST=127.0.0.1
+DASH_PORT=8055
+DEBUG=True
+
 Execute a Docker Engine e em seguida execute os seguintes comandos no terminal:
 
-- docker buildx build --load -t nome-imagem:tag
+- docker buildx build --load -t nome-imagem:tag .
 - docker run --env-file .env -p 8055:8055 nome-imagem:tag
 
 Ex: 
